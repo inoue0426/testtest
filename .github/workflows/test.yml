@@ -2,7 +2,7 @@ name: Open Weekly Issue
 
 on:
   schedule:
-    - cron: '41 16 * * 1' 
+    - cron: '44 15 * * 1' 
 
 jobs:
   create_issue:
