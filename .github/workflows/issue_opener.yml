@@ -1,0 +1,20 @@
+name: Open Weekly Issue
+
+on:
+  schedule:
+    - cron: '0 0 * * 1' # UTCで毎週月曜日の00:00に実行
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Issue
+        uses: imjohnbo/issue-bot@v2
+        with:
+          title: "Weekly Report for $(date +'%Y-%m-%d')"
+          body: |
+            This is the weekly report issue.
+          labels: |
+            weekly-report
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
